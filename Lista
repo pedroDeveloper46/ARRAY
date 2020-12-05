@@ -1,0 +1,13 @@
+package insider.list;
+
+public interface Lista {
+	
+	
+	
+	public void add(Object object);
+	
+	public void remova(Object objeto);
+	
+	public void percorreArray();
+
+}
