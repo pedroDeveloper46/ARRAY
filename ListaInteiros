@@ -1,0 +1,149 @@
+package insider.list;
+
+public class ListaInteiros implements Lista {
+	
+	
+	private int[] inteiros = new int[2];
+	
+	private int index = 0;
+
+	@Override
+	public void add(Object object) {
+		// TODO Auto-generated method stub
+		
+		
+		int[] array;
+		
+		if(index >= inteiros.length) {
+			
+			
+			
+			array = new int[inteiros.length + 1];
+			
+		    int numero = (int) object;
+		    
+		    for (int i = 0; i < this.inteiros.length; i++) {
+				array[i] = this.inteiros[i];
+			}
+		    
+		    array[index] = numero;
+		    
+		    int[] arrayZerado = new int[this.inteiros.length];
+		    
+		    this.inteiros = arrayZerado;
+		    this.inteiros = array;
+		    
+		    
+		    
+		    
+		    
+		    index++;
+		    
+		    
+		   
+			
+			
+			
+		}else {
+			int numero = (int) object;
+			
+			inteiros[index] = numero;
+			
+			index++;
+		}
+		
+		
+		
+		
+		
+	}
+
+	@Override
+	public void remova(Object objeto) {
+		// TODO Auto-generated method stub
+		
+		
+		
+		int numero = (int) objeto;
+		
+		
+		if(containsNumber(numero)) {
+			
+			
+			int dif = returnNumber(numero);
+			
+			
+			int[] array = new int[this.inteiros.length - dif];
+			
+			
+			int index = 0;
+			int quant = 0;
+			
+			
+			for (int i = 0; i < inteiros.length; i++) {
+				if(inteiros[i] != numero) {
+					array[index] = inteiros[i];
+					index++;
+					
+				}else {
+					quant++;
+				}
+			}
+			
+			
+			this.inteiros = array;
+			
+			this.index = this.index - quant;
+
+			
+		}else {
+			System.out.println("O NÚMERO " + numero + " NÃO EXISTE NA LISTA");
+		}
+		
+				
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+
+	@Override
+	public void percorreArray() {
+		// TODO Auto-generated method stub
+		
+		System.out.println("PERCORRENDO O ARRAY");
+		for (int i = 0; i < inteiros.length; i++) {
+			System.out.println(inteiros[i]);
+		}
+		
+		System.out.println("TAMANHO: "+this.inteiros.length);
+	}
+	
+	private boolean containsNumber(int numero) {
+		for (int i = 0; i < inteiros.length; i++) {
+			if(inteiros[i] == numero) {
+				return true;
+			}
+		}
+		
+		return false;
+	}
+	
+	private int returnNumber(int numero) {
+		int number = 0;
+		
+		for (int i = 0; i < inteiros.length; i++) {
+			if(numero == inteiros[i]) {
+				number++;
+			}
+		}
+		
+		return number;
+		
+	}
+
+}
