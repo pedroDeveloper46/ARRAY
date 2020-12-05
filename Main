@@ -1,0 +1,28 @@
+package insider.list;
+
+public class MainList {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Lista lista = new ListaInteiros();
+	    
+		lista.add(3);
+		lista.add(4);
+		lista.add(5);
+		lista.add(3);
+		lista.remova(3);
+		lista.add(8);
+		lista.add(8);
+		lista.add(8);
+		lista.remova(8);
+		lista.remova(10);
+		
+		
+		lista.percorreArray();
+		
+
+		
+	}
+
+}
